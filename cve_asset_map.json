@@ -1,0 +1,18 @@
+{
+  "_aciklama": [
+    "CVE -> varlik eslesmesi. Anahtar = CVE kimligi, deger = taranacak hedefler.",
+    "Otomatik etiket eslestirmesi yetersiz kalirsa buraya elle yazilir.",
+    "Ornek: Citrix urunleri 'NetScaler / ADC / Gateway' gibi farkli adlarla",
+    "gelir; uretici adi 'Citrix' olsa bile varlik kaydinizda 'netscaler'",
+    "yaziliyorsa otomatik eslestirme yakalayamayabilir."
+  ],
+
+  "_zaman_basi": {
+    "ornek_yorum": "Asagidaki kayitlar ornektir; kendi varliklariniza gore duzenleyin.",
+    "ornekler": {
+      "CVE-2026-88779": ["vpn.example.com", "gateway.example.com"],
+      "CVE-2021-44228": ["erp.example.com"],
+      "CVE-2023-44487": ["portal.example.com", "api.example.com"]
+    }
+  }
+}

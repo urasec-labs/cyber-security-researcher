@@ -1,0 +1,20 @@
+# Python 3.11+ gerekir (asyncio.timeout, dataclass slots, TaskGroup uyumu)
+#
+#   pip install -r requirements.txt
+#
+# Harici arac (Python paketi DEGIL, ayrica kurulur):
+#   Nuclei : https://github.com/projectdiscovery/nuclei/releases
+#            + nuclei -update-templates
+#   Ollama : https://ollama.com/download          (LLM_PROVIDER=ollama ise)
+
+aiohttp>=3.9,<4.0
+
+# --- istege bagli, ama tavsiye eder ---
+#
+# `httpx` kullanmiyoruz: mevcut mimarin aiohttp ile calisiyor ve tek bir HTTP
+# istemcisi tutmak daha saglikli (farkli oturum havuzlari, farkli zaman asimi
+# ve yeniden deneme mantigi -> hata ayiklamasi zorlasir).
+#
+# Zaman serisi veya schema taramasi gerekirse:
+#   pydantic>=2.0      # CVE kayitlarini dogrulamak icin
+#   python-dateutil>=2.9

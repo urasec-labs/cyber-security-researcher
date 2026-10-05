@@ -1,0 +1,35 @@
+# ============================================================================
+# VARLIK LISTESI (ALLOWLIST) - Modul 3
+# ============================================================================
+# Yalnizca burada acikca listelediginiz hostlar taranabilir.
+# Kod tara bileseniz bile liste disi bir hedef ScopeError ile reddedilir
+# (bkz. scanner.py -> AssetRegistry.validate_target).
+#
+# FORMAT
+#   <host>            # <etiketler, virgulle ayrilir>   [ <not> ]
+#
+#   ornek:
+#   vpn.example.com            # vpn, perimeter, cisco-asa
+#
+# ETIKETLER NEDEN ONEMLI?
+#   Modul 3, bir CVE'nin sizi etkileyip etkilemedigine karar verirken ureticinin
+#   ve urunun adini varlik kaydinda arar (bkz. AssetRegistry.candidate_assets).
+#   "cisco" etiketi, CVE metnindeki "Cisco" kelimesiyle otomatik eslesir.
+#   Daha guvenilir alternatif: cve_asset_map.json icine elle eslesme yazmak.
+#
+# KAPSAM UYARISI
+#   *.example.com gibi bir joker yazarsaniz o alan adinin tamami kapsama girer.
+#   Bu yuzden joker kayitlari `resolve_targets` icinde genisletilmez; alt
+#   domainleri tek tek yazmaniz gerekir. Bilincli davranin.
+# ============================================================================
+
+# --- Ornek kayitlar (kendi altyapinizla degistirin) ---
+
+#vpn.example.com            # vpn, perimeter, cisco-asa
+#mail.example.com            # exchange, smtp, owa
+#erp.example.com             # sap, rfc
+#portal.example.com          # wordpress, cms, web
+#10.20.30.40                 # fw, vpn concentrator
+#*.corp.example.com          # JOKER - genisletilmez, yalnizca yorum olarak birakili
+
+# --- Kendi varliklarinizi asagilara ekleyin ---
